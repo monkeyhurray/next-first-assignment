@@ -2,7 +2,9 @@ import React from "react";
 import axios from "axios";
 
 const SSGPage = async () => {
-  const response = await fetch(`${process.env.NEXT_APP_SERVER_URL}`);
+  const response = await fetch(`${process.env.NEXT_APP_SERVER_URL}`, {
+    cache: "force-cache",
+  });
   const results = await response.json();
   console.log(results);
 
